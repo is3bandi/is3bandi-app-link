@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>is3bandi On Wheels – Get the App</title>
+  <meta name="description" content="Premium door-to-door steam ironing, right at your doorstep. Download the is3bandi app." />
+
+  <!-- Open Graph / WhatsApp preview -->
+  <meta property="og:title" content="is3bandi On Wheels" />
+  <meta property="og:description" content="Premium steam ironing, picked up & delivered to your door. Tap to download." />
+  <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/D9AE57?text=is3bandi+On+Wheels" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --gold: #D9AE57;
+      --gold-light: #e8c87a;
+      --obsidian: #0a0a0a;
+      --surface: #111111;
+      --text: #f0ece3;
+      --muted: #7a7060;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--obsidian);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Ambient glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(217,174,87,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .logo-mark {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      border: 1.5px solid var(--gold);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      box-shadow: 0 0 30px rgba(217,174,87,0.15);
+      animation: fadeUp 0.8s ease both;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      line-height: 1.2;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    h1 span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .tagline {
+      margin-top: 0.75rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 1.8rem auto;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    /* Status indicator */
+    #status {
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+      animation: fadeUp 0.8s 0.35s ease both;
+      min-height: 1.2em;
+    }
+
+    #status .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+      animation: pulse 1.8s infinite;
+    }
+
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1.6rem;
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--obsidian);
+      box-shadow: 0 4px 24px rgba(217,174,87,0.25);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 6px 32px rgba(217,174,87,0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(217,174,87,0.3);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      background: rgba(217,174,87,0.05);
+    }
+
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .btn-label {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .btn-label small {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 1px;
+    }
+
+    .btn-label strong {
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    /* Detected badge */
+    .detected-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(217,174,87,0.1);
+      border: 1px solid rgba(217,174,87,0.25);
+      border-radius: 20px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .footer {
+      margin-top: 2.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      animation: fadeUp 0.8s 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo-mark">i3</div>
+
+  <h1>
+    <span>Premium Ironing</span>
+    is3bandi On Wheels
+  </h1>
+
+  <p class="tagline">Steam-ironed perfection, picked up<br>and delivered to your doorstep.</p>
+
+  <div class="divider"></div>
+
+  <div id="detected-platform" style="display:none" class="detected-badge">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+    <span id="platform-name"></span> detected
+  </div>
+
+  <p id="status"><span class="dot"></span>Detecting your device…</p>
+
+  <div class="btn-group" id="btn-group">
+    <!-- Injected by JS -->
+  </div>
+
+  <p class="footer">Bengaluru · RR Nagar · Mysore Rd · Kanakapura Rd</p>
+</div>
+
+<script>
+  // ─── CONFIGURE YOUR STORE LINKS HERE ────────────────────────────────────────
+  const PLAY_STORE_URL  = "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME";
+  const APP_STORE_URL   = "https://apps.apple.com/app/idYOUR_APP_ID";
+  const FALLBACK_URL    = "https://is3bandi.com"; // website if neither store matches
+  // ────────────────────────────────────────────────────────────────────────────
+
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+  const isIOS     = /ipad|iphone|ipod/i.test(ua) && !window.MSStream;
+  const isAndroid = /android/i.test(ua);
+
+  const statusEl   = document.getElementById('status');
+  const btnGroup   = document.getElementById('btn-group');
+  const badge      = document.getElementById('detected-platform');
+  const platName   = document.getElementById('platform-name');
+
+  const playIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83 1-.83 1.5-.5l14 8.5-14 8.5c-.5.33-1.5.33-1.5-.5z"/></svg>`;
+  const appleIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>`;
+  const globeIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>`;
+
+  function makeBtn(href, icon, small, label, isPrimary) {
+    const a = document.createElement('a');
+    a.href = href;
+    a.className = isPrimary ? 'btn btn-primary' : 'btn btn-secondary';
+    a.innerHTML = `${icon}<span class="btn-label"><small>${small}</small><strong>${label}</strong></span>`;
+    return a;
+  }
+
+  if (isAndroid) {
+    platName.textContent = 'Android';
+    badge.style.display = 'inline-flex';
+    statusEl.innerHTML = 'Redirecting to Google Play…';
+    btnGroup.appendChild(makeBtn(PLAY_STORE_URL, playIcon, 'Get it on', 'Google Play', true));
+    btnGroup.appendChild(makeBtn(APP_STORE_URL,  appleIcon, 'Also on', 'App Store', false));
+    setTimeout(() => { window.location.href = PLAY_STORE_URL; }, 1800);
+
+  } else if (isIOS) {
+    platName.textContent = 'iPhone / iPad';
+    badge.style.display = 'inline-flex';
+    statusEl.innerHTML = 'Redirecting to App Store…';
+    btnGroup.appendChild(makeBtn(APP_STORE_URL,  appleIcon, 'Download on the', 'App Store', true));
+    btnGroup.appendChild(makeBtn(PLAY_STORE_URL, playIcon,  'Also on', 'Google Play', false));
+    setTimeout(() => { window.location.href = APP_STORE_URL; }, 1800);
+
+  } else {
+    statusEl.innerHTML = 'Choose your platform';
+    btnGroup.appendChild(makeBtn(PLAY_STORE_URL, playIcon,  'Get it on', 'Google Play', false));
+    btnGroup.appendChild(makeBtn(APP_STORE_URL,  appleIcon, 'Download on the', 'App Store', false));
+    btnGroup.appendChild(makeBtn(FALLBACK_URL,   globeIcon, 'Visit our', 'Website', false));
+  }
+</script>
+
+</body>
+</html>
